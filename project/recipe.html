@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .recipe-form, .recipe-list {
+            margin-bottom: 20px;
+        }
+        .recipe-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .recipe-column {
+            width: 45%;
+        }
+        .recipe-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .recipe-item img {
+            width: 100%;
+            height: 400px; 
+            object-fit: cover; 
+            border-radius: 8px;
+        }
+        .recipe-item h3 {
+            margin-top: 0;
+        }
+        .recipe-form label {
+            display: block;
+            margin-top: 10px;
+        }
+        .recipe-form input, .recipe-form textarea, .recipe-form select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+        }
+        .recipe-form button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recipe Book Application</h1>
+    <div class="recipe-form">
+        <h2>Add Recipe</h2>
+        <form id="addRecipeForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="ingredients">Ingredients:</label>
+            <textarea id="ingredients" rows="5" required></textarea>
+
+            <label for="category">Category:</label>
+            <input type="text" id="category" required>
+
+            <label for="creationDate">Creation Date:</label>
+            <input type="date" id="creationDate" required>
+
+            <label for="type">Type:</label>
+            <select id="type" required>
+                <option value="veg">Vegetarian</option>
+                <option value="non-veg">Non-Vegetarian</option>
+                <option value="cool-drink">Cool Drink</option>
+                <option value="ice-cream">Ice Cream</option>
+            </select>
+
+            <button type="submit">Add Recipe</button>
+        </form>
+    </div>
+    <div class="recipe-list">
+        <div class="recipe-column" id="vegColumn">
+            <h2>Vegetarian Recipes</h2>
+        </div>
+        <div class="recipe-column" id="nonVegColumn">
+            <h2>Non-Vegetarian Recipes</h2>
+        </div>
+        <div class="recipe-column" id="coolDrinkColumn">
+            <h2>Cool Drinks</h2>
+        </div>
+        <div class="recipe-column" id="iceCreamColumn">
+            <h2>Ice Creams</h2>
+        </div>
+    </div>
+    <script src="recipe.js"></script>
+</body>
+</html>
